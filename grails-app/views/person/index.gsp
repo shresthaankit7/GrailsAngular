@@ -7,15 +7,19 @@
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 <head>
     <title>Person</title>
 </head>
 
 <body>
-<div ng-app="">
-    <p>Name: <input type="text" ng-model="name"></p>
-    <p ng-bind="name"></p>
+<div>
+    <g:each in="${list}">
+        <g:link action="listTask" controller="Task" params="${[name:it.name]}"><p>Name: ${it.name}</p></g:link>
+        <p>Address: ${it.address}</p>
+        <p>Occupation: ${it.occupation}</p>
+        <g:link action="saveTask" controller="Task" params="${[id:it.id,name:it.name]}">Add Task</g:link>
+        <hr>
+    </g:each>
 </div>
 </body>
 </html>

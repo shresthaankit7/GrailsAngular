@@ -7,6 +7,8 @@ class Task {
 
     static hasMany = [subTasks: SubTask]
 
+    static belongsTo = [person: Person]
+
     static constraints = {
     }
 

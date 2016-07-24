@@ -6,3 +6,5 @@ target
 .idea
 .slcache/.index
 *.bytes
+.slcache/*
+.asscache
