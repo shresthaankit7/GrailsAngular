@@ -13,6 +13,8 @@
 
 <body>
 <div>
+    <g:link action="newPerson" controller="Person">Add Person</g:link>
+    <hr>
     <g:each in="${list}">
         <g:link action="listTask" controller="Task" params="${[name:it.name]}"><p>Name: ${it.name}</p></g:link>
         <p>Address: ${it.address}</p>

@@ -5,6 +5,8 @@ class SubTask {
     String subTaskName;
     int deadLine;
 
+    static belongsTo = [task: Task]
+
     static constraints = {
     }
 
