@@ -13,6 +13,7 @@
 
 <body>
     <b>Listing tasks of ${personName}</b>
+
     <g:each in="${taskList}">
         <p>${it.taskName}</p>
         <p>${it.deadLine}</p>

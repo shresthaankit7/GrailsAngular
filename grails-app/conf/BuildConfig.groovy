@@ -68,6 +68,10 @@ grails.project.dependency.resolution = {
         runtime ":database-migration:1.4.0"
         runtime ":jquery:1.11.1"
 
+        runtime ':twitter-bootstrap:3.3.5'
+
+        compile "org.grails.plugins:asset-pipeline:2.9.1"
+
         compile "org.grails.plugins:asynchronous-mail:1.2"
 
         // Uncomment these to enable additional asset-pipeline capabilities
