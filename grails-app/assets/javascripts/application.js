@@ -8,6 +8,7 @@
 //= require jquery
 //= require_tree .
 //= require_self
+//= require angular.min.js
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {
