@@ -11,12 +11,14 @@
     <title>Main Page</title>
     <asset:javascript src="application.js"/>
     <asset:javascript src="person/module.js"/>
+    <asset:stylesheet src="application.css"/>
 </head>
 
 <body ng-app="myApp" ng-controller="myController">
     <div>Main Page</div>
 
         <div>
+            <button type="button" class="btn btn-primary">Primary</button>
             Header
         </div>
 
