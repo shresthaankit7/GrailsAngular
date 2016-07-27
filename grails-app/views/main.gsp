@@ -13,14 +13,16 @@
     <asset:javascript src="person/module.js"/>
 </head>
 
-<body ng-app="">
+<body ng-app="myApp" ng-controller="myController">
     <div>Main Page</div>
 
-    <div>Header</div>
-        <p>Name: <input type="text" ng-model="name"></p>
-        <p ng-bind="name"></p>
+        <div>
+            Header
+        </div>
 
-    <div>Footer</div>
+        <footer>
+            <p>{{authorName}}</p>
+        </footer>
 
 </body>
 </html>
