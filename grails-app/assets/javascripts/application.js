@@ -8,9 +8,7 @@
 //= require jquery
 //= require_tree .
 //= require_self
-//= require bootstrap
-
-console.log("My javascript goes here");
+//= require angular.min.js
 
 if (typeof jQuery !== 'undefined') {
 	(function($) {

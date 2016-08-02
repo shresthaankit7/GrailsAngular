@@ -57,20 +57,19 @@ grails.project.dependency.resolution = {
         // plugins for the build system only
         build ":tomcat:7.0.55.3" // or ":tomcat:8.0.22"
 
+        runtime ":database-migration:1.4.0"
+
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         // asset-pipeline 2.0+ requires Java 7, use version 1.9.x with Java 6
         compile ":asset-pipeline:2.5.7"
+        compile ":angular-template-asset-pipeline:1.4.1"
+        compile ":angular-annotate-asset-pipeline:1.1.2"
 
         // plugins needed at runtime but not for compilation
         runtime ":hibernate4:4.3.10" // or ":hibernate:3.6.10.18"
         runtime ":database-migration:1.4.0"
-        runtime ":jquery:1.11.1"
-
-        runtime ':twitter-bootstrap:3.3.5'
-
-        compile "org.grails.plugins:asset-pipeline:2.9.1"
 
         compile "org.grails.plugins:asynchronous-mail:1.2"
 
