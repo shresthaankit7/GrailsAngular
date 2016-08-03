@@ -63,7 +63,7 @@ grails.project.dependency.resolution = {
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
         // asset-pipeline 2.0+ requires Java 7, use version 1.9.x with Java 6
-        compile ":asset-pipeline:2.5.7"
+        compile ":asset-pipeline:2.9.1"
         compile ":angular-template-asset-pipeline:1.4.1"
         compile ":angular-annotate-asset-pipeline:1.1.2"
 

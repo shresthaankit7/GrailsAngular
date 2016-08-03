@@ -31,7 +31,7 @@
               <g:each in="${list}">
                   <tr>
                         <td><g:link action="listTask" controller="Task" params="${[name:it.name]}">${it.name}</g:link></td>
-                        <td>${it.address}</td>
+                        <td name="convertCamelCase">${it.address}</td>
                         <td>${it.occupation}</><td>
                         <td><g:link action="saveTask" controller="Task" params="${[id:it.id,name:it.name]}">Add Task</g:link></td>
                   </tr>
@@ -40,6 +40,6 @@
     </table>
     </div>
 </div>
-
+<asset:javascript src="Utils/GeneralUtils.js"/>
 </body>
 </html>
