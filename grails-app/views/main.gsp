@@ -10,21 +10,34 @@
 <head>
     <title>Main Page</title>
     <asset:javascript src="application.js"/>
-    <asset:javascript src="person/module.js"/>
     <asset:stylesheet src="application.css"/>
+    <asset:javascript src="person/module.js"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
 </head>
 
-<body ng-app="myApp" ng-controller="myController">
-    <div>Main Page</div>
+<body ng-app="myApp" ng-controller="driversController">
+    <ng-view></ng-view>
+    <input type="text" ng-model="nameFilter" placeholder="Search .."/>
+    <div>
+        <h1><span>Welcome to F1 championships</span></h1>
 
-        <div>
-            <button type="button" class="btn btn-primary">Primary</button>
-            Header
-        </div>
-
-        <footer>
-            <p>{{authorName}}</p>
-        </footer>
+        <table>
+            <thead>
+                <tr><th colspan="4">Drivers Championship Standings</th></tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="driver in driversList | filter: searchFilter" >
+                    <td ng-bind="$index + 1"></td>
+                    %{--<td><img src="img/flags/{{driver.Driver.nationality}}.png" />--}%
+                    <td>{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</td>
+                    </td>
+                    <td>{{driver.Constructors[0].name}}</td>
+                    <td>{{driver.points}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
+
 </html>

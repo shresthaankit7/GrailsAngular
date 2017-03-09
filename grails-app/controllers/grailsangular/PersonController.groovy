@@ -2,8 +2,11 @@ package grailsangular
 
 class PersonController {
 
+    def dataSource
+
     def index() {
         def list = Person.getAll()
+        println("HERE!!!!")
         [list:list]
     }
 

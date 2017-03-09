@@ -10,7 +10,7 @@ class MailController {
     def sendSampleMail(){
         asynchronousMailService.sendMail {
             to "shresthaankit7@gmail.com"
-            subject "Hello test memail"
+            subject "Hello test email"
             body 'This is a test mail'
         }
     }
