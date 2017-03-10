@@ -17,7 +17,7 @@ environments {
     development {
         dataSource {
             dbCreate = "update" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:mysql://localhost/GrailsAngular"
+            url = "jdbc:mysql://localhost/storedProc"
             username = "root"
             password = "asdf123"
         }

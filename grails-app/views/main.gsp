@@ -17,26 +17,26 @@
 
 <body ng-app="myApp" ng-controller="driversController">
     <ng-view></ng-view>
-    <input type="text" ng-model="nameFilter" placeholder="Search .."/>
-    <div>
-        <h1><span>Welcome to F1 championships</span></h1>
+    %{--<input type="text" ng-model="nameFilter" placeholder="Search .."/>--}%
+    %{--<div>--}%
+        %{--<h1><span>Welcome to F1 championships</span></h1>--}%
 
-        <table>
-            <thead>
-                <tr><th colspan="4">Drivers Championship Standings</th></tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="driver in driversList | filter: searchFilter" >
-                    <td ng-bind="$index + 1"></td>
+        %{--<table>--}%
+            %{--<thead>--}%
+                %{--<tr><th colspan="4">Drivers Championship Standings</th></tr>--}%
+            %{--</thead>--}%
+            %{--<tbody>--}%
+                %{--<tr ng-repeat="driver in driversList | filter: searchFilter" >--}%
+                    %{--<td ng-bind="$index + 1"></td>--}%
                     %{--<td><img src="img/flags/{{driver.Driver.nationality}}.png" />--}%
-                    <td>{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</td>
-                    </td>
-                    <td>{{driver.Constructors[0].name}}</td>
-                    <td>{{driver.points}}</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    %{--<td>{{driver.Driver.givenName}}&nbsp;{{driver.Driver.familyName}}</td>--}%
+                    %{--</td>--}%
+                    %{--<td>{{driver.Constructors[0].name}}</td>--}%
+                    %{--<td>{{driver.points}}</td>--}%
+                %{--</tr>--}%
+            %{--</tbody>--}%
+        %{--</table>--}%
+    %{--</div>--}%
 
 </body>
 
