@@ -1,9 +1,9 @@
 package grailsangular
 
 import groovy.sql.Sql
+
 import static grails.async.Promises.task
 import static grails.async.Promises.waitAll
-
 
 class PersonController {
 
@@ -11,10 +11,20 @@ class PersonController {
 
     def index() {
 
+        def val = params.getInt("input");
+        println "Current Thread:::" + Thread.currentThread().toString()
+
         Sql sql = new Sql(dataSource)
         def sum = 0;
 
-        def tasks = [1,2,3,4].collect{z->
+        List<Integer> callTask = new ArrayList<>();
+
+
+        for(int i = 1 ; i <= val; i++){
+            callTask.add(i);
+        }
+
+        def tasks = callTask.collect{z->
             task{
                 println "Calling Stored Procedure::: " + z
 
@@ -32,9 +42,10 @@ class PersonController {
                     sum = sum + Integer.parseInt(row[0].get("output").toString());
                 }
 
+                sql.close()
+
             }
         }
-
         waitAll(tasks)
 
         render "SUM ::" + sum
