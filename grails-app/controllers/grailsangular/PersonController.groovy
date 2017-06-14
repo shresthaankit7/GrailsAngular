@@ -2,31 +2,22 @@ package grailsangular
 
 import groovy.sql.Sql
 
-import static grails.async.Promises.task
-import static grails.async.Promises.waitAll
-
 class PersonController {
 
     def dataSource
 
     def index() {
 
-        def val = params.getInt("input");
         println "Current Thread:::" + Thread.currentThread().toString()
 
         Sql sql = new Sql(dataSource)
         def sum = 0;
 
-        List<Integer> callTask = new ArrayList<>();
-
-
-        for(int i = 1 ; i <= val; i++){
-            callTask.add(i);
-        }
-
-        def tasks = callTask.collect{z->
+/*
+            //Async way is depreciated now.
+            def tasks = callTask.collect{z->
             task{
-                println "Calling Stored Procedure::: " + z
+                println "Calling Stored Procedure::: " + z + "  Current Thread::" + Thread.currentThread().toString()
 
                 if(z == 1){
                     def row = sql.rows("{call Proc_1()}");
@@ -47,13 +38,13 @@ class PersonController {
             }
         }
         waitAll(tasks)
+*/
+
+
+        def row = sql.rows("{call Proc_1()}");
+        sum = sum + Integer.parseInt(row[0].get("output").toString());
 
         render "SUM ::" + sum
-
-
-//        def list = Person.getAll()
-//        println("HERE!!!!")
-//        [list:list]
     }
 
     def newPerson(){
