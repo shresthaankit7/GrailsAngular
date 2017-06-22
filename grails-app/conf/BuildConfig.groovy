@@ -73,6 +73,7 @@ grails.project.dependency.resolution = {
 
         compile "org.grails.plugins:asynchronous-mail:1.2"
 
+        compile "org.grails.plugins:rest-client-builder:2.1.1"
         // Uncomment these to enable additional asset-pipeline capabilities
         //compile ":sass-asset-pipeline:1.9.0"
         //compile ":less-asset-pipeline:1.10.0"

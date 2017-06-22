@@ -6,6 +6,8 @@ class PersonController {
 
     def dataSource
 
+    static counter = 0;
+
     def index() {
 
         println "Current Thread:::" + Thread.currentThread().toString()
@@ -44,7 +46,10 @@ class PersonController {
         def row = sql.rows("{call Proc_1()}");
         sum = sum + Integer.parseInt(row[0].get("output").toString());
 
-        render "SUM ::" + sum
+
+        counter++;
+        println "Count::: " + counter
+        render sum
     }
 
     def newPerson(){
