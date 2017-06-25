@@ -33,14 +33,15 @@ class TaskController {
     }
 
     def sendRequest(){
+        println "GOT REQUEST::"
         RestBuilder restBuilder = new RestBuilder();
-        def response = restBuilder.get("http://localhost:8080/GrailsAngular/person/")
+        def response = restBuilder.get("http://localhost:8080/FirstGrails-0.1/test/respond/")
         if( response.statusCode == HttpStatus.OK){
+            println  "Sending Response:::" + response.text
             render response.text
         }else{
             println "Error in getting response from rest client!"
             render "ERROR getting response"
         }
-
     }
 }
